@@ -1,0 +1,54 @@
+{% extends "index.html.twig" %}
+
+
+
+
+    {% block cal%}
+        {{ include('cal.html.twig') }}
+    {% endblock cal%}
+
+    {% block css %}
+        {{ include ('css.html.twig') }}
+        <style>
+            body
+            {
+
+                opacity: 0.8;
+                filter:alpha(opacity=50);
+            }
+
+            p
+            {
+                background-color: #d8da3d
+
+            }
+            h1
+            {
+                color: #63bcd7
+            }
+        </style>
+    {% endblock css%}
+
+
+
+
+
+
+
+{% block body %}
+
+
+
+
+    <div class="container">
+        {{ include ('addProd.html.twig') }}
+
+        <!fin partie formulaire>
+    </div>
+
+{% endblock body %}
+
+
+
+
+

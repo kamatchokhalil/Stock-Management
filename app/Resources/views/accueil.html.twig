@@ -1,0 +1,91 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Gestion Produit{% endblock %}
+
+{% block cal%}
+{{ parent() }}
+
+<script>
+    function saisie()
+    {
+        var login=document.getElementsByName("login").value();
+        var pass = document.getElementById("login").value();
+        if(login=="admin"){
+    window.location.replace("http://127.0.0.1:8000/authentification");
+    document.write(login);
+}
+
+    }
+
+    </script>
+
+{% endblock cal%}
+
+{% block stylesheets %}
+    {{ include ('css.html.twig') }}
+    <style>
+        MARQUEE
+        {
+
+            text-decoration-color:#154360;
+        }
+    </style>
+{% endblock stylesheets %}
+
+{% block body %}
+    {{ parent() }}
+
+    {% block menu %}
+
+
+
+    {% endblock menu %}
+<div class="container">
+    <div>
+        <MARQUEE>
+            <B>   Réalisé par :  Oueslati Ahmed Khalil </B>
+        </MARQUEE>
+    </div>
+
+    <div class="page-header">
+        <h1> Bienvenue </h1>
+    </div>
+    <img src="{{ asset("img/iset.jpg") }}">
+    <div id='contcalendar'></div>
+    <br> <br> <br> <br>
+    <br> <br> <br> <br>
+
+    <div class="jumbotron">
+        <p>
+Authentification
+        <div class="form-group">
+
+                <div class="input-group mb-3">
+                    <form method="get" action="{{ path('authentification') }}" }}>
+                    <input type="text" class="form-control" name="login" placeholder="Tapez ici votre pseudo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    </form>
+
+                </div>
+
+        </div>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> Remember me
+            </label>
+        </div>
+
+
+        <a href="{{ path('inscription') }}"> <button type="button" class="btn btn-link">Inscription</button> </a>
+
+
+        </p>
+    </div>
+
+    </center>
+    <!fin partie formulaire>
+</div>
+
+
+    {% endblock body %}
+

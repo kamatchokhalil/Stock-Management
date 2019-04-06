@@ -1,0 +1,33 @@
+{% extends "::layout.html.twig" %}
+{% block body %}
+{% block menu_tete %}{{ include('::bare_tete.html.twig') }}{% endblock %}
+    {% block menu_bare %}{{ include('::bare_menu.html.twig') }}{% endblock %}
+
+<div class="content-wrapper">
+    <section class="content">
+
+            {% block tout %}
+                Produit :
+                <ul>
+                    <li>
+                        Designation  :{{produit.desg}}
+                    </li>
+                    <li>
+                        quantité: {{produit.qte}}
+                    </li>
+
+                    <li>
+                        <a href="{{ path('editProd', {'id': produit.id}) }}">
+                            Editer
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('listProd') }}" >
+                            Retour à la liste
+                        </a>
+                    </li>
+
+                </ul>
+            {% endblock %}
+
+{% endblock %}

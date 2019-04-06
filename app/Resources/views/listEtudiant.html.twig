@@ -1,0 +1,59 @@
+{% extends "index.html.twig" %}
+
+    {% block body %}
+
+
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="row">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3  class="box-title"> Liste des Etudiants</h3>
+                        </div>
+                        <div class="box-body">
+                            {% block tout %}
+
+                                <table id="exemple1" class="table table-bordered  table-striped">
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Prenom</th>
+                                        <th colspan ="3">Actions</th>
+                                    </tr>
+                                    {% for a in listEtud %}
+                                        <tr
+                                            bgcolor= "#FF081C"
+                                               >
+                                            <td>
+                                                {{a.nom}}
+                                            </td>
+                                            <td>
+                                                {{a.prenom}}
+                                            </td>
+                                            <td>
+                                                <a href="{{ path('AffProd', {'id': a.id}) }}">
+                                                    afficher
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ path('MajProd', {'id': a.id}) }}">
+                                                    Editer
+                                                </a>
+
+                                            </td>
+                                            <td>
+                                                <a href="{{ path('SuppProd', {'id': a.id}) }}">
+                                                    Supprimer
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+    {% endblock %}

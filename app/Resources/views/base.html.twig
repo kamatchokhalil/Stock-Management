@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        {% block cal%}
+            {{ include('cal.html.twig') }}
+        {% endblock cal%}
+
+        {% block stylesheets %}
+
+            <style type="text/css">
+                body
+                {
+
+                }
+
+                p
+                {
+
+                    top:100px;
+                }
+                img
+                {
+                    margin-top:5px;
+                    margin-right:50px;
+                    float:left;
+                }
+
+                MARQUEE
+                {
+                    color:#4CAF50;
+                }
+
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    background-color: #333;
+                }
+
+                li {
+                    float: left;
+                }
+
+                li a {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+
+                li a:hover {
+                    background-color: #4CAF50;
+                }
+
+
+
+                #contcalendar{
+                    float:right;
+                    height:170px;
+                    width:350px;
+                    margin:auto;
+                    margin-top:5px;
+                    margin-right: 10px;
+                    background-color:#904044;
+                    -webkit-box-shadow: 10px 10px 10px #212121;
+                    filter:progid:DXImageTransform.Microsoft.Shadow(color=#333333,direction=120,strength=5);
+                    box-shadow: 10px 10px 10px #212121;
+                    border:1px ridge #aaa;
+                    border-radius:10px;
+                }
+
+                #contcalendar table{
+
+                    margin:auto;
+                    text-align:center;
+                    font-size:12px;
+                    font-weight:bold;
+                    line-height:20px;
+                    text-shadow: 10px 10px 10px #232711;
+                    filter:progid:DXImageTransform.Microsoft.Shadow(color=#333333,direction=120,strength=7);
+
+                }
+            </style>
+        {% endblock %}
+
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+
+
+
+    <body>
+        {% block body %}
+{% block menu %}
+
+    {{ include('nav.html.twig') }}
+
+{% endblock menu %}
+
+
+        {% endblock %}
+
+        {% block map %}
+            {{ include('map.html.twig') }}
+        {% endblock map %}
+
+        {% block javascripts %}
+
+
+            <link rel="stylesheet" type="text/css" href="{{ asset("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css") }}">
+            <script src="{{ asset("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js") }}"> </script>
+            <script src="{{ asset("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js") }}"> </script>
+            <script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+
+
+        {% endblock %}
+    </body>
+
+
+</html>

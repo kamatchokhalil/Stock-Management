@@ -1,0 +1,60 @@
+{% extends "::layout.html.twig" %}
+
+    {% block body %}
+    {% block menu_tete %}{{ include('bare_tete.html.twig') }}{% endblock %}
+    {% block menu_bare %}{{ include('bare_menu.html.twig') }}{% endblock %}
+
+    <div class="content-wrapper">
+        <section class="content">
+
+            <div class="row">
+
+            <div class="box">
+
+
+            <div class="box-header">
+                <h3  class="box-title"> Liste des Produits</h3>
+            </div>
+            <div class="box-body">
+                {% block tout %}
+
+                    <table id="exemple1" class="table table-bordered  table-striped">
+                        <tr>
+
+                            <th>Designation</th>
+                            <th>Quantité</th>
+                        </tr>
+                        {% for a in produits %}
+                            <tr {% if a.qte  == 0 %}
+                                bgcolor= "#FF081C"
+
+                                    {% endif %}>
+
+
+                                <td>
+                                    {{a.desg}}
+                                </td>
+
+                                <td>
+                                    {{a.qte}}
+                                </td>
+
+
+
+                            </tr>
+                        {% endfor %}
+                    </table>
+
+                {% endblock %}
+            </div>
+    </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    {% block menu_bas %}{{ include('bare_bas.html.twig') }}{% endblock %}
+
+
+{% endblock %}

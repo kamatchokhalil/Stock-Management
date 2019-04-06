@@ -1,0 +1,73 @@
+{% extends "base.html.twig" %}
+
+
+{% block title%} {% endblock title%}
+
+    {% block cal%}
+        {{ parent() }}
+    {% endblock cal%}
+
+    {% block stylesheets %}
+        {{ include ('css.html.twig') }}
+<style>
+body
+{
+
+opacity: 0.8;
+filter:alpha(opacity=50);
+}
+
+p
+{
+background-color: #d8da3d
+
+}
+h1
+{
+color: #63bcd7
+}
+</style>
+    {% endblock stylesheets%}
+
+
+
+
+
+
+
+{% block body %}
+
+
+
+
+<div class="container">
+    <div class="page-header">
+        <h1> Bienvenue </h1>
+    </div>
+
+    <div class="jumbotron">
+        <p>
+            Inscription
+        </p>
+        <! partie formulaire >
+        <form class="form-inline"  name="f">
+            Nom d'utilisateur    :<br>  <input type="text" size="100px" class="form-control" name="username">
+            <br>
+            Mot de passe: <br> <input type="text" class="form-control" size="100px" name="password">
+            <br>
+            Email: <br>  <input type="text" class="form-control"  size="100px" name="mail">
+
+            <br> <br>
+            <button type="button" class="btn btn-primary" width="200px" onclick='inscription()'>Inscription</button>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock body %}
+
+
+
+
+

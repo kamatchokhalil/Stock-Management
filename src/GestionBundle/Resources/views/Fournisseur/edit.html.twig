@@ -1,0 +1,35 @@
+{% extends "::layout.html.twig" %}
+{% block title %}Gestion Fournisseur{% endblock %}
+
+{% block body %}
+{% block menu_tete %}{{ include('::bare_tete.html.twig') }}{% endblock %}
+    {% block menu_bare %}{{ include('::bare_menu.html.twig') }}{% endblock %}
+
+    <div class="content-wrapper">
+        <section class="content">
+
+                {% block tout %}
+                    <div class="col-md-6">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">
+                              Modifier Catégorie
+                                </h3>
+                                <div class="box-body">
+
+                    {{ include("@Produit2/ProduitType/form.html.twig") }}
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                {% endblock %}
+
+        </section>
+    </div>
+
+{% block menu_bas %}{{ include('::bare_bas.html.twig') }}{% endblock %}
+
+{% endblock %}

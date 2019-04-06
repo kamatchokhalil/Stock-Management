@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+{% endblock stylesheets %}
+
+    {% block body %}
+<div class="content-wrapper">
+    <section class="content">
+
+
+            Etudiant :
+            <ul>
+                <li>
+                    Nom  :{{etudiant.nom}}
+                </li>
+                <li>
+                    Prenom: {{etudiant.prenom}}
+                </li>
+
+                <li>
+                    <a href="{{ path('MajProd', {'id': etudiant.id}) }}">
+                        Editer
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('listProd') }}" >
+                        Retour à la liste
+                    </a>
+                </li>
+
+            </ul>
+        {% endblock %}

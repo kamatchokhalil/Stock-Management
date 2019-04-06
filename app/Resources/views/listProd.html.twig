@@ -1,0 +1,111 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ include ('css.html.twig') }}
+    <style>
+        body
+        {
+
+            opacity: 0.8;
+            filter:alpha(opacity=50);
+        }
+
+        p
+        {
+            background-color: #d8da3d
+
+        }
+        h1
+        {
+            color: #63bcd7
+        }
+        div.content-wrapper
+        {
+
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+        }
+
+        div.box-header
+        {
+            margin-left: 900px;
+        }
+    </style>
+{% endblock stylesheets %}
+    {% block body %}
+
+        {% block menu %}
+
+            {{ include('navProd.html.twig') }}
+
+        {% endblock menu %}
+
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="row">
+                    <div class="box">
+                        <h3  class="box-title"> Nos Produits</h3>
+                        <div class="box-header">
+                            <form method="get" action="{{ path('chercheProd') }}" }}>
+                                Chercher :  <input type="text" name="designation" size="30">
+                                </br> </br>
+
+                            </form>
+                        </div>
+
+                        <div class="box-body">
+                            {% block tout %}
+
+                                <table id="exemple1" class="table table-bordered  table-striped">
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Désignation</th>
+                                        <th>Quantité</th>
+                                        <th colspan ="3">Actions</th>
+                                    </tr>
+                                    {% for a in listProd %}
+                                        <tr
+                                                bgcolor= "#ccd1d1"
+                                        >
+                                            <td>
+                                                {{a.code}}
+                                            </td>
+                                            <td>
+                                                {{a.designation}}
+                                            </td>
+                                            <td>
+                                                {{a.quantite}}
+                                            </td>
+
+                                            <td>
+                                                <a href="{{ path('AffProd', {'id': a.id}) }}">
+                                                    afficher
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ path('MajProd', {'id': a.id}) }}">
+                                                    Editer
+                                                </a>
+
+                                            </td>
+                                            <td>
+                                                <a href="{{ path('SuppProd', {'id': a.id}) }}">
+                                                    Supprimer
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        {% block map %}
+
+        {% endblock map %}
+    {% endblock %}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>{% block title %}Accueil{% endblock %}</title>
+
+        {% block cal%}
+
+        {% endblock cal%}
+
+        {% block stylesheets %}
+
+            {{ include ('css.html.twig') }}
+
+            <style type="text/css">
+
+
+                body
+                {
+
+                    opacity: 0.8;
+                    filter:alpha(opacity=50);
+                    background-repeat: no-repeat;
+
+                    
+                    background-size:1600px 700px;
+                    
+                }
+
+
+
+
+                form.form-inline
+                {
+                    padding-top: 300px;
+                    padding-right: 30px;
+                    padding-bottom: 50px;
+                    padding-left: 80px;
+                }
+            </style>
+        {% endblock %}
+
+    </head>
+
+
+
+    <body background="{{ asset("img/gestcom.jpg") }}">
+        {% block body %}
+
+
+
+        {% endblock %}
+
+        {% block menu %}
+
+
+            <div>
+                <form class="form-inline"  name="f">
+                    {{ include('nav.html.twig') }}
+                </form>
+            </div>
+
+        {% endblock menu %}
+
+        {% block map %}
+
+        {% endblock map %}
+
+        {% block javascripts %}
+
+
+            <link rel="stylesheet" type="text/css" href="{{ asset("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css") }}">
+            <script src="{{ asset("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js") }}"> </script>
+            <script src="{{ asset("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js") }}"> </script>
+            <script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+
+
+        {% endblock %}
+    </body>
+
+
+</html>

@@ -1,0 +1,14 @@
+<h1>Personne :</h1>
+{% if  bio.nom =="khalil"%}
+<b>Nom: </b>{{ bio.nom }}
+<br/>
+    {% if not(((bio.age )in ['a'..'z'])or ((bio.age)in ['A'..'Z'])) %}
+        <b>Age: </b>{{ bio.age }}
+    {% endif %}
+<hr><br>
+<b>commentaire: </b>{{ comment }}
+<hr><br>
+<b>Le point: </b>({{ tab.x }},{{ tab.y }})
+{% else %}
+<b>Bonjour</b>
+{% endif %}

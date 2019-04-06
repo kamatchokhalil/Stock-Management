@@ -1,0 +1,26 @@
+
+<html lang="fr">
+<head>
+
+
+        {{ include('cal.html.twig') }}
+
+
+    {% block css %}
+        {{ include ('css.html.twig') }}
+    {% endblock css%}
+</head>
+
+
+
+
+
+{% block body %}
+<body>
+
+{{ include ('accueil.html.twig') }}
+
+</body>
+{% endblock body %}
+</html>
+

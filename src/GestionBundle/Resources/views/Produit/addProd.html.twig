@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+
+
+ {% block body %}
+     {{ parent() }}
+
+     <div class="form-group">
+         {{ form_start(form, {'attr': {'class': 'jumbotron'}}) }}
+         {{ form_row(form.code, {'attr': {'class': 'form-control'}}) }}
+         {{ form_row(form.designation, {'attr': {'class': 'form-control'}}) }}
+         {{ form_row(form.quantite, {'attr': {'class': 'form-control'}}) }}
+         {{ form_row(form.fournisseur, {'attr': {'class': 'form-control'}}) }}
+
+     </div>
+     {{ form_end(form) }}
+ {% endblock body %}

@@ -1,0 +1,71 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Gestion Fournisseur{% endblock %}
+{% block stylesheets %}
+    {{ include ('css.html.twig') }}
+    <style>
+        body
+        {
+
+            background-repeat: no-repeat;
+
+
+            background-size:1600px 700px;
+            filter:alpha(opacity=50);
+        }
+
+        p
+        {
+            background-color: #d8da3d
+
+        }
+        h1
+        {
+            color: #63bcd7
+        }
+        div.form-group
+        {
+
+            padding-top: 150px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+        }
+
+        div.box-header
+        {
+            margin-left: 900px;
+        }
+
+        #form_ajouter{
+
+            position: absolute;
+            right: 100px;
+            top: 400px;
+        }
+    </style>
+{% endblock stylesheets %}
+
+
+
+ {% block body %}
+     <body background="{{ asset("img/addFour.jpg") }}">
+     {% block menu %}
+
+         {{ include('navFour.html.twig') }}
+
+     {% endblock menu %}
+
+     <div class="form-group">
+         {{ form_start(form) }}
+         {{ form_row(form.code, {'attr': {'class': 'form-control'}}) }}
+         {{ form_row(form.raisonsociale, {'attr': {'class': 'form-control'}}) }}
+         {{ form_end(form) }}
+     </div>
+
+     {% block map %}
+
+     {% endblock map %}
+
+</body>
+ {% endblock body %}

@@ -1,0 +1,36 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}Gestion Fournisseur{% endblock %}
+
+{% block body %}
+{% block menu_tete %}{{ include('::bare_tete.html.twig') }}{% endblock %}
+    {% block menu_bare %}{{ include('::bare_menu.html.twig') }}{% endblock %}
+
+<div class="content-wrapper">
+    <section class="content">
+
+            {% block tout %}
+                Persone
+                <ul>
+                    <li>
+                 Code:       {{cat.codType}}
+                    </li>
+                    <li>
+                     Designation :  {{cat.designation}}
+                    </li>
+
+                    <li>
+                        <a href="{{ path('editTProd', {'id': cat.id}) }}">
+                            Editer
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('listTypeProd') }}" >
+                            Retour à la liste
+                        </a>
+                    </li>
+
+                </ul>
+            {% endblock %}
+
+{% endblock %}

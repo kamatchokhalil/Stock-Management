@@ -1,0 +1,74 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+{{ parent() }}
+
+<style>
+    div.content-wrapper
+    {
+
+        padding-top: 50px;
+        padding-right: 80px;
+        padding-bottom: 50px;
+        padding-left: 80px;
+}
+</style>
+
+{% endblock stylesheets %}
+
+    {% block body %}
+{{ parent() }}
+
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="row">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3  class="box-title"> Produit</h3>
+                        </div>
+                        <div class="box-body">
+                            {% block tout %}
+
+                                <table id="exemple1" class="table table-bordered  table-striped">
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Désignation</th>
+                                        <th>Quantité</th>
+                                        <th colspan ="3">Actions</th>
+                                    </tr>
+                                    {% for a in produit %}
+                                        <tr
+                                                bgcolor= "#bfc9ca"
+                                        >
+                                            <td>
+                                               {{a.code}}
+                                            </td>
+
+                                            <td>
+                                                {{a.designation}}
+                                            </td>
+                                            <td>
+                                                {{a.quantite}}
+                                            </td>
+                                            <td>
+                                                <a href="{{ path('listProd') }}" >
+                                                    Retour à la liste
+                                                </a>
+
+                                            </td>
+                                            <td>
+                                                <a href="{{ path('MajProd', {'id': a.id}) }}">
+                                                    Editer
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        {% endblock %}

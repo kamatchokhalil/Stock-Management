@@ -1,0 +1,48 @@
+gestion:
+    resource: "@GestionBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fournisseur:
+    resource: "@FournisseurBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+produit:
+    resource: "@ProduitBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+categorie:
+    resource: "@CategorieBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+examen:
+    resource: "@ExamenBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+matiere:
+    resource: "@MatiereBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+etudiant:
+    resource: "@EtudiantBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+blog:
+    resource: "@BlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+personne:
+    resource: "@PersonneBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
